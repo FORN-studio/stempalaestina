@@ -32,12 +32,10 @@
 		}
 	];
 
-	let currentStep: 1 | 2 | 3 = $state((form?.nextStep as any) || 1);
+	let currentStep: 1 | 2 | 3 = $derived((form?.nextStep as any) || 1);
 	let ActiveStepComponent = $derived(steps[currentStep - 1].Component);
 
-	onMount(() => {
-		if (form?.error) toast.error(form.error);
-	});
+	$effect(() => { if (form?.error) toast.error(form.error) })
 </script>
 
 {#snippet stepper(num: number, title: string)}

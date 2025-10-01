@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getIcon } from '$lib/icons';
+	import { enhance } from '$app/forms';
 
 	let values: (string | null)[] = $state(Array.from({ length: 6 }, (_, i) => null));
 	let submitBtn: HTMLElement | undefined = $state();
@@ -62,7 +63,7 @@
 	};
 </script>
 
-<form class="step phone" method="POST" action="?/validate">
+<form class="step phone" method="POST" action="?/validate" use:enhance>
 	<p class="description">
 		Om et øjeblik modtager du en kode vla SMS, som du skal bruge til at godkende din underskrift.
 	</p>

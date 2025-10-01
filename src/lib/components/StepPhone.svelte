@@ -3,7 +3,7 @@
 	import { enhance } from '$app/forms';
 </script>
 
-<form class="step phone" method="POST" action="?/attempt">
+<form class="step phone" method="POST" action="?/attempt" use:enhance>
 	<p class="description">
 		Når du har indtastet dit telefon-nummer, modtager du en kode via SMS, som du kan bruge til at
 		godkende din underskrift.

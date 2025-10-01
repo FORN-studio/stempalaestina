@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { getIcon } from '$lib/icons';
+	import { enhance } from '$app/forms';
 </script>
 
-<form class="step phone" method="POST" action="?/subscribe">
+<form class="step phone" method="POST" action="?/subscribe" use:enhance>
 	<p class="description">
 		Tak for din underskrift. Vi sender regelmæssigt opdateringer ud via email, når der sker nyt i
 		sagen. Hvis du har lyst til at følge med i udviklingen, kan du skrive dig op nedenfor.
