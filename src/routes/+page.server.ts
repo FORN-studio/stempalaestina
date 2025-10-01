@@ -9,7 +9,7 @@ import { fail } from '@sveltejs/kit';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 import * as jose from 'jose';
 import { hmac } from '@oslojs/crypto/hmac';
-import { SHA256 } from '@oslojs/crypto/sha2';
+import { SHA512 } from '@oslojs/crypto/sha2';
 import { encodeBase64url } from '@oslojs/encoding';
 import { createClient } from '@supabase/supabase-js';
 
@@ -34,7 +34,7 @@ const createOTP = () => {
 const hashPhone = (phone: string) => {
 	const key = new TextEncoder().encode(SERVER_SECRET);
 	const msg = new TextEncoder().encode(phone);
-	const mac = hmac(SHA256, key, msg);
+	const mac = hmac(SHA512, key, msg);
 	return encodeBase64url(mac);
 };
 
@@ -56,7 +56,7 @@ export const actions: Actions = {
 		const token = await createToken({ phone: normedPhone.number, otp });
 
 		// deliver pin via sms
-		const target = `https://gatewayapi.eu/rest/mtsms?token=${GATEWAY_API_TOKEN}&message=${encodeURI(`Din engangskode til underskrivning er: ${otp}. Den er gyldig i fem minutter.`)}&recipients.0.msisdn=${normedPhone.number.replace('+', '')}`;
+		const target = `https://gatewayapi.eu/rest/mtsms?token=${GATEWAY_API_TOKEN}&message=${encodeURI(`Din engangskode til underskrivning er: ${otp}. Den er gyldig i fem minutter.`)}&recipients.0.msisdn=${normedPhone.number.replace('+', '')}&sender=Stem P.`;
 		const res = await fetch(target);
 		if (res.status !== 200)
 			return fail(500, {
