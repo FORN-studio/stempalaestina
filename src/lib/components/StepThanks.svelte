@@ -2,7 +2,7 @@
 	import { getIcon } from '$lib/icons';
 </script>
 
-<div class="step phone" method="POST" action="?/attempt">
+<div class="step phone">
 	<p class="description">Vi holder dig opdateret. Tusind tak for din hjælp.</p>
 </div>
 

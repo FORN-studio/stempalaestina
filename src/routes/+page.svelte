@@ -35,7 +35,9 @@
 	let currentStep: 1 | 2 | 3 = $derived((form?.nextStep as any) || 1);
 	let ActiveStepComponent = $derived(steps[currentStep - 1].Component);
 
-	$effect(() => { if (form?.error) toast.error(form.error) })
+	$effect(() => {
+		if (form?.error) toast.error(form.error);
+	});
 </script>
 
 {#snippet stepper(num: number, title: string)}
@@ -84,14 +86,22 @@
 	</div>
 
 	<QnA />
+
+	<a
+		href="https://github.com/FORN-studio/stempalaestina"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="source"
+	>
+		<span class="text">Se på Github</span>
+		<span class="icon">{@html getIcon('github')}</span>
+	</a>
 </div>
 
 <style lang="scss">
 	@use 'src/lib/scss/variables' as *;
 
-	$colsize: 800px;
-
-	:global(button) {
+	:global(button:not(.unstyled)) {
 		background-color: $red;
 		color: $white;
 		padding: 0.5rem 2rem;
@@ -107,6 +117,22 @@
 	#main {
 		min-height: 100vh;
 		background: $blue;
+		padding-bottom: 4rem;
+
+		a.source {
+			color: $black;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: .5rem;
+			text-decoration: none;
+			border: solid 1px rgba($black, 0.2);
+			width: 200px;
+			margin: 6rem auto;
+			border-radius: 999px;
+			padding: .5rem;
+		}
 
 		.sign {
 			display: flex;
