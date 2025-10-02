@@ -138,6 +138,13 @@
 			margin: 4rem auto;
 			background-color: $white;
 			padding: 2rem;
+			max-width: calc(100% - 2rem);
+			border-radius: .5rem;
+
+			@media (max-width: 968px) {
+				max-width: calc(100% - 1rem);
+				padding: 2rem 1rem;
+			}
 
 			> * {
 				max-width: $colsize;
