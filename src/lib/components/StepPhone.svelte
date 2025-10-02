@@ -9,6 +9,10 @@
 		godkende din underskrift.
 	</p>
 
+	<p class="pledge">
+		Jeg, som vælger i Københavns kommune, bekræfter ved at fortsætte, at jeg til Kommunalvalget 2025 kun vil stemme på kandidater, der har underskrevet og forpligtet sig til Stem Palæstinas krav.
+	</p>
+
 	<div class="input">
 		<span class="country"> +45 </span>
 
@@ -35,6 +39,13 @@
 
 		.description {
 			color: rgba($black, 0.8);
+		}
+
+		.pledge {
+			padding-bottom: 1rem;
+			border: solid 1px rgba($black, 0.1);
+			padding: 1rem;
+			border-radius: .5rem;
 		}
 
 		.input {

@@ -60,12 +60,9 @@
 	</div>
 
 	<div class="header">
-		<h1>Lorem ipsum dolor</h1>
+		<h1>Underskriv vaelgerloefte</h1>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. In laoreet feugiat efficitur. Quisque
-			sodales ornare facilisis. Maecenas scelerisque leo quis risus sagittis molestie. Aenean quis
-			justo leo. Etiam porttitor tempus dolor a blandit. Maecenas tempor egestas eros. Maecenas
-			vitae quam risus.
+			Skriv under på vores vælgerløfte og vis kandidaterne, at du vil stemme Palæstina til kommunalvalg d. 18. november 2025
 		</p>
 
 		<!-- <button>

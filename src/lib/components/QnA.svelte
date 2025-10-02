@@ -7,7 +7,7 @@
 		{
 			question: 'Bliver mit telefon-nummer gemt når jeg skriver under?',
 			answer: `
-                For at sikre os, at den samme person ikke kan stemme to gange, bliver en "hashet" version af dit 
+                For at sikre os, at den samme person ikke kan underskrive to gange, bliver en "hashet" version af dit 
                 telefon-nummer gemt. Dit telefon-nummer bliver altså ikke gemt som det er - i stedet bruger vi en 
                 kryptografisk teknik, <a href="https://en.wikipedia.org/wiki/HMAC" target="_blank">HMAC-SHA512</a>, til at gemme
                 en beskyttet version af dit telefon-nummer. Det betyder, at selv hvis databasen skulle lække,
@@ -20,7 +20,7 @@
 			answer: `
                 Ja - men vi har gjort vores bedste for at vælge en tredjepart der er til at stole på. For at sende
                 en SMS til dit telefon-nummer, så vi kan være sikre på at det faktisk er dig der ejer det,
-                bruger vi den europæiske tjeneste <a href="https://gatewayapi.com/" target="_blank">GatewayAPI</a>.
+                bruger vi den EU-baserede tjeneste <a href="https://gatewayapi.com/" target="_blank">GatewayAPI</a>.
             `
 		},
 		{
