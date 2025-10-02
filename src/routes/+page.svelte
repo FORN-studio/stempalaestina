@@ -60,7 +60,7 @@
 	</div>
 
 	<div class="header">
-		<h1>Underskriv vælgerloefte</h1>
+		<h1>Underskriv vælgerløfte</h1>
 		<p>
 			Skriv under på vores vælgerløfte og vis kandidaterne, at du vil stemme Palæstina til kommunalvalg d. 18. november 2025. Du kan læse den fulde liste af krav, som Stem Palæstina har sendt til kandidaterne <a href="https://www.stempalaestina.dk/vores-krav/" target="_blank">her</a>.
 		</p>
