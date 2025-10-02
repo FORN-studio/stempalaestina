@@ -60,9 +60,9 @@
 	</div>
 
 	<div class="header">
-		<h1>Underskriv vaelgerloefte</h1>
+		<h1>Underskriv vælgerloefte</h1>
 		<p>
-			Skriv under på vores vælgerløfte og vis kandidaterne, at du vil stemme Palæstina til kommunalvalg d. 18. november 2025
+			Skriv under på vores vælgerløfte og vis kandidaterne, at du vil stemme Palæstina til kommunalvalg d. 18. november 2025. Du kan læse den fulde liste af krav, som Stem Palæstina har sendt til kandidaterne <a href="https://www.stempalaestina.dk/vores-krav/" target="_blank">her</a>.
 		</p>
 
 		<!-- <button>
@@ -109,6 +109,11 @@
 		align-items: center;
 		gap: 0.5rem;
 		cursor: pointer;
+	}
+
+	:global(a) {
+		color: $red;
+		font-weight: 500;
 	}
 
 	#main {
