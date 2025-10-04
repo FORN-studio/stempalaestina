@@ -3,12 +3,16 @@
 	import { enhance } from '$app/forms';
 	import { onMount } from 'svelte';
 
+	let props = $props()
+
 	let accepted = $state(false);
 
 	onMount(() => document.querySelector('.accept.no-js')?.classList.remove('no-js'))
 </script>
 
 <form class="step phone" method="POST" action="?/attempt" use:enhance>
+	<input type="hidden" name="timing-token" value={props.timingToken}>
+
 	<p class="description">
 		Når du har indtastet dit telefon-nummer, modtager du en kode via SMS, som du kan bruge til at
 		godkende din underskrift.

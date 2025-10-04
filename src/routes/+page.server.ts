@@ -38,18 +38,44 @@ const hashPhone = (phone: string) => {
 	return encodeBase64url(mac);
 };
 
+export const load = async ({ setHeaders }) => {
+
+	// prevent caching to avoid token chaos
+	setHeaders({ 'cache-control': 'no-store' })
+
+	// create a short-lived token
+	const timingToken = await new jose.SignJWT({})
+		.setProtectedHeader({ alg: 'HS256', typ: 'JWT' })
+		.setIssuedAt()
+		.setExpirationTime('30m')
+		.sign(secret)
+
+	return { timingToken }
+}
+
 export const actions: Actions = {
 	attempt: async ({ request, cookies }) => {
 		// grab data and validate
 		const data = await request.formData();
 		const accepted = data.get('accept') as string;
 		const phone = data.get('phone') as string;
+		const timingToken = data.get('timing-token') as string
 
 		if (!accepted) return fail(400, { error: 'Du kan ikke underskrive uden at godkende løftet og acceptere privatlivspolitikken.' })
 		if (!phone) return fail(400, { error: 'Indtast dit telefon-nummer for at fortsætte' });
 		const normedPhone = parsePhoneNumberFromString(phone, 'DK');
 		if (!normedPhone || !normedPhone.isValid())
 			return fail(400, { error: 'Det indtastede telefon-nummer er ikke et gyldigt dansk nummer' });
+		if (!timingToken) return fail(402, { error: 'Noget ser ikke helt rigtigt ud. Prøv igen om et øjeblik.' })
+		
+		// ensure the timing token was issued no less than 3 seconds ago
+		// this protects against automated, fast-acting bots
+		const vt = await jose.jwtVerify(timingToken, secret)
+		const issuedAt = vt.payload.iat
+		const currentTime = Math.floor(Date.now() / 1000)
+		const tokenAge = currentTime - (issuedAt || 0)
+		console.log(tokenAge)
+		if (tokenAge < 5) return fail(402, { error: 'Der skete en fejl. Prøv igen om et øjeblik.' })
 
 		// generate otp
 		const otp = createOTP();

@@ -10,7 +10,8 @@
 	import type { PageProps } from './$types';
 	import { toast } from 'svelte-sonner';
 
-	let { form }: PageProps = $props();
+	let { form, data }: PageProps = $props();
+	let { timingToken } = $derived(data)
 
 	const steps: { title: string; Component: Component }[] = [
 		{
@@ -76,7 +77,7 @@
 		</div>
 
 		<div class="step">
-			<ActiveStepComponent />
+			<ActiveStepComponent {timingToken} />
 		</div>
 	</div>
 
