@@ -15,7 +15,7 @@
 	/>
 </svelte:head>
 
-<Toaster duration={10000} closeButton closeButtonAriaLabel="Luk" position="top-center" />
+<Toaster richColors duration={10000} closeButton closeButtonAriaLabel="Luk" position="top-center" />
 
 {@render children?.()}
 
