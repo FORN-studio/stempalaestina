@@ -6,7 +6,6 @@
 	import StepSubscribe from '$lib/components/StepSubscribe.svelte';
 	import StepThanks from '$lib/components/StepThanks.svelte';
 	import QnA from '$lib/components/QnA.svelte';
-	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
 	import type { PageProps } from './$types';
 	import { toast } from 'svelte-sonner';
@@ -32,7 +31,7 @@
 		}
 	];
 
-	let currentStep: 1 | 2 | 3 = $derived((form?.nextStep as any) || 1);
+	let currentStep: 1 | 2 | 3 = $derived((form?.nextStep as any) || 2);
 	let ActiveStepComponent = $derived(steps[currentStep - 1].Component);
 
 	$effect(() => {

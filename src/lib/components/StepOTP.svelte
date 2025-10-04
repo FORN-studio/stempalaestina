@@ -110,6 +110,10 @@
 			flex-direction: row;
 			gap: 0.5rem;
 
+			@media (max-width: 968px) {
+				gap: 0;
+			}
+
 			input {
 				padding: 0.5rem;
 				border: solid 1px rgba($black, 0.2);
@@ -118,6 +122,14 @@
 				height: 50px;
 				text-align: center;
 				overflow: hidden;
+
+				@media (max-width: 968px) {
+					border-radius: 0px;
+					
+					&:not(:last-child) { border-right: none; }
+					&:first-child { border-radius: 5px 0 0 5px; }
+					&:last-child { border-radius: 0 5px 5px 0; }
+				}
 			}
 		}
 	}
