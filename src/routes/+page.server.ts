@@ -42,8 +42,10 @@ export const actions: Actions = {
 	attempt: async ({ request, cookies }) => {
 		// grab data and validate
 		const data = await request.formData();
+		const accepted = data.get('accept') as string;
 		const phone = data.get('phone') as string;
 
+		if (!accepted) return fail(400, { error: 'Du kan ikke underskrive uden at godkende løftet og acceptere privatlivspolitikken.' })
 		if (!phone) return fail(400, { error: 'Indtast dit telefon-nummer for at fortsætte' });
 		const normedPhone = parsePhoneNumberFromString(phone, 'DK');
 		if (!normedPhone || !normedPhone.isValid())

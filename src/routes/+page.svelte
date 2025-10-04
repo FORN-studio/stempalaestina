@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { getIcon } from '$lib/icons';
-	import Vandmelon from '$lib/assets/vandmelon.svg';
 	import StepPhone from '$lib/components/StepPhone.svelte';
 	import StepOTP from '$lib/components/StepOTP.svelte';
 	import StepSubscribe from '$lib/components/StepSubscribe.svelte';
@@ -55,16 +54,6 @@
 {/snippet}
 
 <div id="main">
-	<div class="nav">
-		<a href="https://stempalaestina.dk" class="back">
-			<span class="icon">{@html getIcon('arrowLeft')}</span>
-			<span class="text">Tilbage til forsiden</span>
-		</a>
-
-		<div class="logo">
-			<img src={Vandmelon} alt="Stem Palaestina" />
-		</div>
-	</div>
 
 	<div class="header">
 		<h1>Underskriv vælgerløfte</h1>
@@ -245,41 +234,6 @@
 
 			p {
 				color: rgba($black, 0.8);
-			}
-		}
-
-		.nav {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 1rem 2rem;
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			background-color: $blue;
-			z-index: 999;
-
-			a {
-				display: flex;
-				align-items: center;
-				gap: 1rem;
-				color: $black;
-				text-decoration: none;
-			}
-
-			.logo {
-				height: 40px;
-
-				@media (max-width: 768px) {
-					height: 30px;
-				}
-
-				img {
-					width: 100%;
-					height: 100%;
-					object-fit: contain;
-				}
 			}
 		}
 	}

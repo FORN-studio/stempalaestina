@@ -113,6 +113,8 @@
 					border-top: solid 1px rgba($black, 0.1);
 					text-align: left;
 					font-weight: 500;
+
+					.icon { flex-shrink: 0; }
 				}
 
 				.answer {
