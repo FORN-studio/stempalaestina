@@ -16,8 +16,14 @@
 	<title>Stem Palæstina | Skriv Under</title>
 	<meta
 		name="description"
-		content="Stem Palæstina er en kampagne startet af en bred vifte af Palæstina solidaritetsbevægelsen i København. Vi er partipolitisk uafhængige og vores formål er at presse kandidaterne til at tage reel handling. Vi kæmper for retfærdighed og menneskerettigheder for Palæstinas befolkning, pro-palæstinensisk ytringsfrihed og en tryg by for alle københavnere."
+		content="Stem Palæstina er en kampagne, der bakkes op af en bred vifte af Palæstina solidaritetsbevægelsen i København. Vi har tre centrale krav til kandidaterne i Københavns Kommune i forbindelse med kommunalvalget d. 18. november 2025."
 	/>
+	<meta property="og:description" content="Stem Palæstina er en kampagne, der bakkes op af en bred vifte af Palæstina solidaritetsbevægelsen i København. Vi har tre centrale krav til kandidaterne i Københavns Kommune i forbindelse med kommunalvalget d. 18. november 2025.">
+	<meta property="og:title" content="Stem Palæstina | Skriv Under">
+	<meta property="og:url" content="https://underskrift.stempalaestina.dk/">
+	<meta property="og:site_name" content="Stem Palæstina">
+	<meta property="og:image" content="https://underskrift.stempalaestina.dk/og_image.png" />
+
 </svelte:head>
 
 {#snippet backnav(href: string, text: string)}
