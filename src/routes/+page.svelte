@@ -6,6 +6,7 @@
 	import StepSubscribe from '$lib/components/StepSubscribe.svelte';
 	import StepThanks from '$lib/components/StepThanks.svelte';
 	import QnA from '$lib/components/QnA.svelte';
+	import Pledge from '$lib/components/Pledge.svelte';
 	import type { Component } from 'svelte';
 	import type { PageProps } from './$types';
 	import { toast } from 'svelte-sonner';
@@ -33,6 +34,13 @@
 
 	let currentStep: 1 | 2 | 3 = $derived((form?.nextStep as any) || 2);
 	let ActiveStepComponent = $derived(steps[currentStep - 1].Component);
+
+	const scrollToForm = () => {
+		const el = document.querySelector('.sign')
+		const box = el?.getBoundingClientRect()
+		const pos = (box?.top || 0) + window.scrollY - 100
+		window.scrollTo({ top: pos, behavior: 'smooth' })
+	}
 
 	$effect(() => {
 		if (form?.error) toast.error(form.error);
@@ -64,10 +72,12 @@
 			Skriv under på vores vælgerløfte og vis kandidaterne, at du vil stemme Palæstina til kommunalvalg d. 18. november 2025. Du kan læse den fulde liste af krav, som Stem Palæstina har sendt til kandidaterne <a href="https://www.stempalaestina.dk/vores-krav/" target="_blank">her</a>.
 		</p>
 
-		<!-- <button>
-            Skriv under
-        </button> -->
+		<button onclick={scrollToForm}>
+			Skriv under
+		</button>
 	</div>
+
+	<Pledge />
 
 	<div class="sign">
 		<div class="steppers">
