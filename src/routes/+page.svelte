@@ -32,7 +32,7 @@
 		}
 	];
 
-	let currentStep: 1 | 2 | 3 = $derived((form?.nextStep as any) || 2);
+	let currentStep: 1 | 2 | 3 = $derived((form?.nextStep as any) || 1);
 	let ActiveStepComponent = $derived(steps[currentStep - 1].Component);
 
 	const scrollToForm = () => {
